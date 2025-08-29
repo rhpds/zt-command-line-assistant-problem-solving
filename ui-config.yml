@@ -5,20 +5,20 @@ antora:
   modules:
     - name: "01-timezone"
       label: "Timezone"
-      solveButton: true
+      solveButton: false
     - name: "02-useraccounts-script"
       label: "Useraccounts Script"
-      solveButton: true
+      solveButton: false
     - name: "03-web-server"
       label: "Web Server"
-      solveButton: true
+      solveButton: false
     - name: "04-network"
       label: "Network"
-      solveButton: true
+      solveButton: false
     - name: "05-kb-articles"
       label: "Kb Articles"
-      solveButton: true
+      solveButton: false
 
 tabs:
   - name: ">_ terminal"
-    url: /wetty
+    url: /wetty_rhel/ssh/root

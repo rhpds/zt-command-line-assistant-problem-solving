@@ -14,7 +14,8 @@ Simple Content Access (SCA) is a simplified subscription model and
 command line assistant can return the full definition and links to
 additional documentation.
 
-image:../assets/sca.png[../assets/sca]
+.Simple Content Access (SCA)
+image::sca.png[../assets/sca]
 
 On the topic of subscriptions, let’s ask command line assistant how to
 use `+subscription-manager+`.
@@ -27,7 +28,8 @@ c "what is subscription-manager"
 As you can see we are provided a summary on how to use
 `+subscription-manager+`.
 
-image:../assets/subscription_manager.png[../assets/subscription_manager]
+.Subscription manager
+image::subscription_manager.png[../assets/subscription_manager]
 
 Ansible core is included with a RHEL subscription. Ask command line
 assistant what it is.
@@ -37,7 +39,8 @@ assistant what it is.
 c "what is ansible-core"
 ----
 
-image:../assets/ansible_core.png[../assets/ansible_core]
+.Ansible core
+image::ansible_core.png[../assets/ansible_core]
 
 That concludes this lab. Thank you for taking the time to learn more
 about command line assistant.

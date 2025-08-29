@@ -55,11 +55,13 @@ ln -s /www/test.html /var/www/html/
 
 Try to access the web page.
 
-image:../assets/test_page_error.png[../assets/test_page_error]
+.Test page error
+image::test_page_error.png[../assets/test_page_error]
 
 A new browser tab will open and you’ll receive the following error.
 
-image:../assets/error_message_web_page.png[../assets/error_message_web_page]
+.Error message
+image::error_message_web_page.png[../assets/error_message_web_page]
 
 == Ask command line assistant how to solve selinux problems
 
@@ -72,7 +74,8 @@ c "how do I look for selinux policy violations"
 
 Command line assistant will return an answer similar to the following.
 
-image:../assets/selinux_troubleshooting.png[../assets/selinux_troubleshooting]
+.Selinux troubleshooting
+image::selinux_troubleshooting.png[../assets/selinux_troubleshooting]
 
 Let’s review the audit logs.
 
@@ -189,4 +192,5 @@ systemctl restart httpd.service
 
 Now reload the webpage. You should obtain the following result.
 
-image:../assets/success_relable.png[../assets/success_relable]
+.Success
+image::success_relable.png[../assets/success_relable]

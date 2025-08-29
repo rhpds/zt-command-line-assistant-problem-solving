@@ -1,3 +1,7 @@
+:imagesdir: ../assets/images
+
+== Configure DNS and port redirection
+
 The command line assistant is useful for configuring and troubleshooting
 RHEL networking. In this assignment we’ll use command line assistant to
 help us configure DNS as well as port redirection.
@@ -12,7 +16,9 @@ c "how do I determine my dns server in rhel9"
 ----
 
 The output should look something like this.
-image:../assets/view_dns.png[../assets/view_dns]
+
+.View DNS
+image::view_dns.png[../assets/view_dns]
 
 Let’s run the suggested command.
 
@@ -40,7 +46,8 @@ c "how do I configure the dns server to 8.8.8.8 from the command line?"
 
 The output will look like this.
 
-image:../assets/cla_configure_dns.png[../assets/cla_configure_dns]
+.Configure DNS
+image::cla_configure_dns.png[../assets/cla_configure_dns]
 
 When you run `+nmcli connection show+`, multiple connections are
 returned.
@@ -50,7 +57,8 @@ returned.
 nmcli connection show
 ----
 
-image:../assets/nmcli_con_show.png[../assets/nmcli_con_show]
+.Nmcli connection show
+image::nmcli_con_show.png[../assets/nmcli_con_show]
 
 How do I know what connection to configure?
 
@@ -62,7 +70,8 @@ is being used.
 c "what is my default gateway"
 ----
 
-image:../assets/default_gateway.png[../assets/default_gateway]
+.Default gateway
+image::default_gateway.png[../assets/default_gateway]
 
 Let’s run `+ip route | grep default+`.
 
@@ -106,7 +115,8 @@ cat /etc/resolv.conf
 
 We can see that `+8.8.8.8+` is now configured as a DNS server.
 
-image:../assets/8888_dns.png[../assets/8888_dns]
+.8888 DNS
+image::8888_dns.png[../assets/8888_dns]
 
 == Configure port redirection
 
@@ -142,4 +152,5 @@ curl http://rhel.${_SANDBOX_ID}.instruqt.io:9000/test.html
 
 Here’s the result you should get.
 
-image:../assets/redirected_result.png[../assets/redirected_result]
+.Redirected result
+image::redirected_result.png[../assets/redirected_result]
