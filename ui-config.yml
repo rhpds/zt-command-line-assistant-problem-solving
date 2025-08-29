@@ -3,8 +3,20 @@ antora:
   name: modules
   dir: www
   modules:
-    - name: "01-demo"
-      label: "Demo"
+    - name: "01-timezone"
+      label: "Timezone"
+      solveButton: true
+    - name: "02-useraccounts-script"
+      label: "Useraccounts Script"
+      solveButton: true
+    - name: "03-web-server"
+      label: "Web Server"
+      solveButton: true
+    - name: "04-network"
+      label: "Network"
+      solveButton: true
+    - name: "05-kb-articles"
+      label: "Kb Articles"
       solveButton: true
 
 tabs:
