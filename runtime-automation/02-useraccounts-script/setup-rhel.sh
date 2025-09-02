@@ -1,6 +1,8 @@
 #!/bin/sh
 echo "Starting module called 02-useraccounts-script" >> /tmp/progress.log
 
+cd /root
+
 git clone https://gist.github.com/1c8afb3087be6e4ec8f1df0a5e50124d.git /root/test
 mv /root/users/users.csv /root/
 rm -rf /root/users
