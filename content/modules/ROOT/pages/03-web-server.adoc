@@ -3,6 +3,8 @@ commonly encountered with customized web servers.
 
 == Set up an selinux violation
 
+[%collapsible]
+====
 Let’s set up our web server to trigger an selinux policy violation.
 We’ll create a directory and a test html page in a non-standard location
 in our filesystem. Since the directory and file won’t have the correct
@@ -51,20 +53,29 @@ Let’s run this.
 ln -s /www/test.html /var/www/html/
 ----
 
+====
+
 == Test the webpage
 
+[%collapsible]
+====
 Try to access the web page.
 
-.Test page error
-image::test_page_error.png[../assets/test_page_error]
+[source,bash,run]
+----
+curl -k http://localhost/test.html
+----
 
-A new browser tab will open and you’ll receive the following error.
+You'll receive a 403 error.
 
 .Error message
-image::error_message_web_page.png[../assets/error_message_web_page]
+image::test_webpage_404.png[]
+====
 
 == Ask command line assistant how to solve selinux problems
 
+[%collapsible]
+====
 Ask command line assistant how to fix selinux policy problems.
 
 [source,bash,run]
@@ -86,8 +97,8 @@ ausearch -m avc -ts recent
 
 Here’s the output.
 
-[source,bash,nocopy]
-----
+[source,test]
+....
 root@rhel:~# ausearch -m avc -ts recent
 ----
 time->Wed Apr 16 20:23:09 2025
@@ -99,7 +110,7 @@ time->Wed Apr 16 20:23:09 2025
 type=PROCTITLE msg=audit(1744834989.683:416): proctitle=2F7573722F7362696E2F6874747064002D44464F524547524F554E44
 type=SYSCALL msg=audit(1744834989.683:416): arch=c000003e syscall=262 success=no exit=-13 a0=ffffff9c a1=7fa3fc00ab78 a2=7fa3c27fb830 a3=0 items=0 ppid=5752 pid=6166 auid=4294967295 uid=48 gid=48 euid=48 suid=48 fsuid=48 egid=48 sgid=48 fsgid=48 tty=(none) ses=4294967295 comm="httpd" exe="/usr/sbin/httpd" subj=system_u:system_r:httpd_t:s0 key=(null)
 type=AVC msg=audit(1744834989.683:416): avc:  denied  { getattr } for  pid=6166 comm="httpd" path="/www/test.html" dev="sda2" ino=36336 scontext=system_u:system_r:httpd_t:s0 tcontext=system_u:object_r:root_t:s0 tclass=file permissive=0
-----
+....
 
 We can see that we’ve obtained a `+denied+` error for `+getattr+`
 operations. Let’s ask command line assistant how to fix this.
@@ -111,8 +122,8 @@ c "how do I fix the error avc:  denied  { getattr } for  pid=6166 comm="httpd" p
 
 Here’s the output.
 
-[source,bash,nocopy]
-----
+[source,test]
+....
 root@rhel:~# c "how do I fix the error avc:  denied  { getattr } for  pid=6166 comm="httpd" path="/www/test.html""
 ⁺₊+ Asking RHEL Lightspeed
 To resolve the SELinux avc: denied { getattr } error for the path /www/test.html, follow these steps:
@@ -169,7 +180,7 @@ To resolve the SELinux avc: denied { getattr } error for the path /www/test.html
    This will provide more detailed information about the SELinux denial and help you troubleshoot further.
 
 By following these steps, you should be able to resolve the SELinux avc: denied { getattr } error for the path /www/test.html`.
-----
+....
 
 For the sake of brevity, we’ll proceed with steps 5 and 6.
 
@@ -192,5 +203,14 @@ systemctl restart httpd.service
 
 Now reload the webpage. You should obtain the following result.
 
-.Success
-image::success_relable.png[../assets/success_relable]
+[source,bash,run]
+----
+curl -k http://localhost/test.html
+----
+
+You should obtain the following result.
+
+.Test webpage
+image::test_webpage.png[../assets/test_webpage]
+
+====
