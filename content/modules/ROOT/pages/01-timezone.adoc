@@ -18,7 +18,7 @@ corner of the code block below.
 
 [source,bash,run]
 ----
-c "how do I configure the timezone to Vancouver Canada on the cli in RHEL 9"
+c "how do I configure the timezone to Vancouver Canada on the cli in RHEL 10"
 ----
 
 Here’s the output.
