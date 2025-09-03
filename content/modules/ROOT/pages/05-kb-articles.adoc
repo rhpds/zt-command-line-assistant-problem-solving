@@ -1,3 +1,7 @@
+:imagesdir: ../assets/images
+
+== KB articles support
+
 Command line assistant has the ability to return answers that make use
 of a Retrieval Augmented Generation database that provides Red Hat
 Enterprise Linux-specific knowledge.

@@ -38,6 +38,8 @@ EOF
 Let’s create a soft link from the default http directory to
 `+/www/test.html+`.
 
+Let's ask command line assistant how to do this.
+
 [source,bash,run]
 ----
 c "how do I soft link /www/test.html to the default http directory"
@@ -97,7 +99,7 @@ ausearch -m avc -ts recent
 
 Here’s the output.
 
-[source,test]
+[source,text]
 ....
 root@rhel:~# ausearch -m avc -ts recent
 ----
@@ -122,7 +124,7 @@ c "how do I fix the error avc:  denied  { getattr } for  pid=6166 comm="httpd" p
 
 Here’s the output.
 
-[source,test]
+[source,text]
 ....
 root@rhel:~# c "how do I fix the error avc:  denied  { getattr } for  pid=6166 comm="httpd" path="/www/test.html""
 ⁺₊+ Asking RHEL Lightspeed
@@ -201,7 +203,7 @@ Restart the web server.
 systemctl restart httpd.service
 ----
 
-Now reload the webpage. You should obtain the following result.
+Now reload the webpage.
 
 [source,bash,run]
 ----

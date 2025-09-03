@@ -1,6 +1,6 @@
 :imagesdir: ../assets/images
 
-== Configure DNS and port redirection
+== Network troubleshooting
 
 The command line assistant is useful for configuring and troubleshooting
 RHEL networking. In this assignment we’ll use command line assistant to
@@ -55,39 +55,7 @@ nmcli connection show
 .Nmcli connection show
 image::nmcli_con_show.png[../assets/nmcli_con_show]
 
-How do I know what connection to configure?
-
-Let’s see what connection is currently the default gateway and which NIC
-is being used.
-
-[source,bash,run]
-----
-c "what is my default gateway"
-----
-
-.Default gateway
-image::default_gateway.png[../assets/default_gateway]
-
-Let’s run `+ip route | grep default+`.
-
-[source,bash,run]
-----
-ip route | grep default
-----
-
-Here’s the output.
-
-[source,bash,nocopy]
-----
-root@rhel:~# ip route | grep default
-default via 10.5.0.1 dev eth0 proto dhcp src 10.5.0.92 metric 100
-----
-
-We can see that the default route is set for eth0. eth0 is configured to
-`+Wired connection 1+`.
-
-As per the instructions above, run the following command to configure
-the new DNS server.
+Let's configure the DNS server as suggested by command line assistant.
 
 [source,bash,run]
 ----
